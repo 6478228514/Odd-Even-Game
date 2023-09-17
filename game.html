@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1 for Smit Dobariya</title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        button{
+            background-color: pink;
+            border-radius: 25px;
+            font-size: 25px;
+            display: block;
+            margin: auto;
+            
+        }
+        h1{
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    
+   <script>
+        var unumber=0;
+        var cnumber=0;
+
+        while(true)
+        {
+        var Prompt=parseInt(prompt("Please choose any number between 0 to 9"));
+
+        while(Prompt<0 || Prompt>9 || isNaN(Prompt))
+        {
+             Prompt=parseInt(prompt("Invalid Input!!! \nPlease choose any number between 0 to 9"));
+        }
+
+        var randomno=parseInt(Math.floor(Math.random()*10));
+
+        if((Prompt%2==0 && randomno%2==0)||(Prompt%2!=0 && randomno%2!=0))
+        {
+            unumber=unumber+1;
+             alert("You picked number"+Prompt+". Computer picked number "+randomno+".\nResult is even so You win."+"\n"+"\nyou: "+unumber+"\nComputer: "+cnumber);
+        }
+
+        
+
+        else
+        {
+            cnumber=cnumber+1;
+             alert("You picked number "+Prompt+". Computer picked number "+randomno+".\nResult is odd so computer win."+"\n"+"\nyou: "+unumber+"\nComputer: "+cnumber);
+        }
+
+        var conf=confirm("Do you want to play again?");
+
+        if(conf==true)
+        continue;
+
+        else
+        if(unumber>cnumber)
+        alert("Final Score:\nyou: "+unumber+"\nComputer: "+cnumber+"\nYou win!!");
+
+        else
+        if(unumber<cnumber)
+        alert("Final Score:\nyou: "+unumber+"\nComputer: "+cnumber+"\nComputer win!!");
+
+        else
+        if(unumber=cnumber)
+        alert("Final Score:\nyou: "+unumber+"\nComputer: "+cnumber+"\nTie!!");
+
+        break;
+
+        
+        
+
+    }
+    if(unumber>cnumber)
+    document.write("<h1>Congratulation you win!!</h1>");
+
+    else
+    if(unumber<cnumber)
+    document.write("<h1>Better luck for next time!!</h1>");
+
+    else
+        if(unumber=cnumber)
+        document.write("<h1>It's Tie!!</h1>");
+
+   </script>
+
+   <a href="index.html"><button>Play Again</button></a>
+    
+
+
+</body>
+
+</html>
